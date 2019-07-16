@@ -1,0 +1,26 @@
+import random
+import socket
+print("Welcome to this chatbox")
+greet = ["hello","hi","hola","Hello","Hi","Hola"]
+greetR = ["Hi","Hello","Welcome","What you want"]
+pun = ["My boss is going to fire the employee with the worst posture. I have a hunch, it might be me","R.I.P boiled water. You will be mist","Did you hear about the guy who got hit in the head with a can of soda? He was lucky it was a soft drink.","I couldn't quite remember how to throw a boomerang, but eventually, it came back to me."]
+goodbye = ["cya","goodbye","have a nice day","Never liked you anyway"]
+secrets = ["Area 51 is real","Aliens exist"]
+while True:
+	ask = raw_input(">>>")
+	if ask in greet:
+		response = random.choice(greetR)
+		print(response)
+	elif ask == "Tell me a pun" or ask =="tell me a pun" or ask == "Tell me a joke" or ask == "tell me a joke":
+		response = random.choice(pun)
+		print(response)
+	elif ask == "goodbye" or ask == "Goodbye" or ask == "cya" or ask == "Cya":
+		response = random.choice(goodbye)
+		print(response)
+		print("Connecting to IP " + socket.gethostbyname(socket.gethostname()))
+	elif ask == "secrets" or ask == "Secrets":
+		response = random.choice(secrets)
+		print(response)
+	else:
+		print("I'm sorry, I didn't understand")
+		print("Connecting to IP " + socket.gethostbyname(socket.gethostname()))
